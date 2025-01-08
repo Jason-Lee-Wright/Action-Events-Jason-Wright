@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ParticalSystem : MonoBehaviour
 {
+    public GameObject partical;
     private void Move()
     {
-        
-        transform.position = transform.position + new Vector3(0, 2, 0);
+
+        partical.transform.position = transform.position + new Vector3(0, 2, 0);
     }
 
     void Return()
     {
-        transform.position = transform.position - new Vector3(0, 2, 0);
+        partical.transform.position = transform.position - new Vector3(0, 2, 0);
     }
 
     private void OnEnable()

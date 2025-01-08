@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Sun : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Light sunlight;
+    public int Num, num2;
+
+    private void OnEnable()
     {
-        
+        ActionsManager.TriggerEntered += Brightness;
+        ActionsManager.TriggerExited += Darkness;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        ActionsManager.TriggerEntered -= Brightness;
+        ActionsManager.TriggerExited -= Darkness;
+    }
+
+    void Brightness()
+    {
+        sunlight.intensity = Num;
+    }
+
+    void Darkness()
+    {
+        sunlight.intensity = num2;
     }
 }
